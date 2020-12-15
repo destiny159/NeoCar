@@ -1,6 +1,11 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  overflow-y: scroll;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,6 +18,7 @@ p {
 	line-height: 24px;
 }
 a {
+	color: #0A58CA;
 	text-decoration: none!important;
 }
 ul {
@@ -47,12 +53,12 @@ ul.social-icons li a {
 }
 
 ul.social-icons li a:hover {
-	background-color: #f33f3f;
+	background-color: #B02A37;
 	color: #fff;
 }
 
 a.filled-button {
-	background-color: #f33f3f;
+	background-color: #B02A37;
 	color: #fff;
 	font-size: 14px;
 	text-transform: capitalize;
@@ -77,7 +83,7 @@ a.filled-button:hover {
 .section-heading h2 {
 	font-size: 28px;
 	font-weight: 400;
-	color: #1e1e1e;
+	color: #58151C;
 	margin-bottom: 15px;
 }
 
@@ -90,7 +96,7 @@ a.filled-button:hover {
 }
 
 .page-heading .text-content h4 {
-	color: #f33f3f;
+	color: #B02A37;
 	font-size: 22px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -106,7 +112,7 @@ a.filled-button:hover {
 
 #preloader {
   overflow: hidden;
-  background: #f33f3f;
+  background: #B02A37;
   left: 0;
   right: 0;
   top: 0;
@@ -219,7 +225,7 @@ header .navbar {
 .background-header .navbar-nav .nav-link.active,
 .background-header .navbar-nav .nav-link.show,
 .background-header .navbar-nav .show>.nav-link {
-	color: #f33f3f!important;
+	color: #B02A37!important;
 }
 .navbar .navbar-brand {
 	float: 	left;
@@ -238,7 +244,7 @@ header .navbar {
 }
 .navbar .navbar-brand h2 em {
 	font-style: normal;
-	color: #f33f3f;
+	color: #B02A37;
 }
 #navbarResponsive {
 	z-index: 999;
@@ -265,7 +271,7 @@ header .navbar {
 .navbar .navbar-nav .show>.nav-link {
 	color: #fff;
 	padding-bottom: 25px;
-	border-bottom: 3px solid #f33f3f;
+	border-bottom: 3px solid #B02A37;
 }
 .navbar .navbar-toggler-icon {
 	background-image: none;
@@ -282,7 +288,7 @@ header .navbar {
 }
 .navbar .navbar-toggler-icon:after {
 	content: '\f0c9';
-	color: #f33f3f;
+	color: #B02A37;
 	font-size: 18px;
 	line-height: 26px;
 	font-family: 'FontAwesome';
@@ -334,7 +340,7 @@ header .navbar {
 }
 
 .banner .text-content h4 {
-	color: #f33f3f;
+	color: #B02A37;
 	font-size: 22px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -394,7 +400,7 @@ header .navbar {
 	text-transform: uppercase;
 	font-size: 13px;
 	font-weight: 700;
-	color: #f33f3f;
+	color: #B02A37;
 }
 
 .product-item {
@@ -414,7 +420,7 @@ header .navbar {
 
 .product-item .down-content h4 {
 	font-size: 17px;
-	color: #1a6692;
+	color: #0A58CA;
 	margin-bottom: 20px;
 }
 
@@ -437,7 +443,7 @@ header .navbar {
 }
 
 .product-item .down-content ul li i {
-	color: #f33f3f;
+	color: #B02A37;
 	font-size: 14px;
 }
 
@@ -446,12 +452,12 @@ header .navbar {
 	right: 30px;
 	bottom: 30px;
 	font-size: 13px;
-	color: #f33f3f;
+	color: #B02A37;
 	font-weight: 500;
 }
 
 .product-item .down-content span a {
-	color: #f33f3f;
+	color: #B02A37;
 	display: inline-block;
 	margin-bottom: 3px;
 }
@@ -492,7 +498,7 @@ header .navbar {
 
 .best-features h4 {
 	font-size: 17px;
-	color: #1a6692;
+	color: #0A58CA;
 	margin-bottom: 20px;
 }
 
@@ -527,11 +533,11 @@ header .navbar {
 }
 
 .best-features ul.featured-list li a:hover {
-	color: #f33f3f;
+	color: #B02A37;
 }
 
 .best-features ul.featured-list li a:hover::before {
-	background-color: #f33f3f;
+	background-color: #B02A37;
 }
 
 .best-features .filled-button {
@@ -545,15 +551,13 @@ header .navbar {
 /* Call To Action */
 
 .call-to-action .inner-content {
-	margin-top: 60px;
 	padding: 30px;
-	background-color: #f7f7f7;
 	border-radius: 5px;
 }
 
 .call-to-action .inner-content h4 {
 	font-size: 17px;
-	color: #1a6692;
+	color: #0A58CA;
 	margin-bottom: 15px;
 }
 
@@ -590,7 +594,7 @@ footer .inner-content p {
 }
 
 footer .inner-content p a {
-	color: #f33f3f;
+	color: #B02A37;
 	margin-left: 3px;
 }
 
@@ -623,7 +627,7 @@ footer .inner-content p a {
 
 .products .filters ul li.active,
 .products .filters ul li:hover {
-  color: #f33f3f;
+  color: #B02A37;
 }
 
 .dropdown-menu { 
@@ -674,8 +678,8 @@ footer .inner-content p a {
 
 .products ul.pages li a:hover,
 .products ul.pages li.active a {
-	background-color: #f33f3f;
-	border-color: #f33f3f;
+	background-color: #B02A37;
+	border-color: #B02A37;
 	color: #fff;
 }
 
@@ -729,7 +733,7 @@ footer .inner-content p a {
 
 .team-member .thumb-container .hover-effect .hover-content ul.social-icons li a:hover {
 	background-color: #fff;
-	color: #f33f3f;
+	color: #B02A37;
 }
 
 .team-member:hover .hover-effect {
@@ -739,14 +743,14 @@ footer .inner-content p a {
 
 .team-member .down-content h4 {
 	font-size: 17px;
-	color: #1a6692;
+	color: #0A58CA;
 	margin-bottom: 8px;
 }
 
 .team-member .down-content span {
 	display: block;
 	font-size: 13px;
-	color: #f33f3f;
+	color: #B02A37;
 	font-weight: 500;
 	margin-bottom: 20px;
 }
@@ -784,7 +788,7 @@ footer .inner-content p a {
 	display: inline-block;
 	text-align: center;
 	line-height: 100px;
-	background-color: #f33f3f;
+	background-color: #B02A37;
 	color: #fff;
 	font-size: 32px;
 }
@@ -796,7 +800,7 @@ footer .inner-content p a {
 
 .service-item .down-content h4 {
 	font-size: 17px;
-	color: #1a6692;
+	color: #0A58CA;
 	margin-bottom: 20px;
 }
 
@@ -825,7 +829,7 @@ footer .inner-content p a {
 }
 
 .owl-clients button.owl-dot.active { 
-	background: #f33f3f!important; 
+	background: #B02A37!important; 
 }
 
 /* Clients */
@@ -867,7 +871,7 @@ footer .inner-content p a {
 
 .find-us h4 {
 	font-size: 17px;
-	color: #1a6692;
+	color: #0A58CA;
 	margin-bottom: 20px;
 }
 
@@ -919,7 +923,7 @@ footer .inner-content p a {
 }
 
 .contact-form button.filled-button {
-	background-color: #f33f3f;
+	background-color: #B02A37;
 	color: #fff;
 	font-size: 14px;
 	text-transform: capitalize;
@@ -945,17 +949,17 @@ footer .inner-content p a {
 .accordion a {
 	cursor: pointer;
 	font-size: 17px;
-	color: #1a6692!important;
+	color: #0A58CA!important;
 	margin-bottom: 20px;
 	transition: all .3s;
 }
 
 .accordion a:hover {
-	color: #f33f3f!important;
+	color: #B02A37!important;
 }
 
 .accordion a.active {
-  color: #f33f3f!important;
+  color: #B02A37!important;
 }
 
 .accordion li .content {
@@ -1091,7 +1095,7 @@ footer .inner-content p a {
 	.navbar .navbar-nav .nav-link.active,
 	.navbar .navbar-nav .nav-link.show,
 	.navbar .navbar-nav .show>.nav-link {
-		color: #f33f3f!important;
+		color: #B02A37!important;
 		border-bottom: none!important;
 		padding-bottom: 15px;
 	}
