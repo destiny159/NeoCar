@@ -1,0 +1,13 @@
+{% extends 'main/index2.html.twig' %}
+
+{% block carname %}Lamborghini Aventador S{% endblock %}
+{% block imagesrc %}{{ asset('images/lambo/lambo-main.png') }}{% endblock %}
+{% block bodysvg %}{{ source('car-svgs/lambo-body.svg') }}{% endblock %}
+
+{% block colors %}{{ parent() }}{% endblock %}
+{% block wheels %}
+    <div class="wheel selection-button selected" data-src=" ">1</div>
+    <div class="wheel selection-button" data-src="{{ asset('images/lambo/lambo-wheels.png') }}">2</div>
+{% endblock %}
+{% block windows %}{{ parent() }}{% endblock %}
+{% block interiors %}{{ parent() }}{% endblock %}

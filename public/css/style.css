@@ -17,9 +17,12 @@ p {
 	color: #4a4a4a;
 	line-height: 24px;
 }
-a {
+a, .btn-link {
 	color: #0A58CA;
 	text-decoration: none!important;
+}
+a:hover, .btn-link:hover {
+	color: #3D8BFD;
 }
 ul {
 	padding: 0;

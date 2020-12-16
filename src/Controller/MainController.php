@@ -17,10 +17,11 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/cardetails", name="cardetails")
+     * @Route("/cardetails/{nr}", name="cardetails", requirements={"nr"="\d+"})
      */
-    public function carDetais(): Response
+    public function carDetais(int $nr = null): Response
     {
-        return $this->render('main/index2.html.twig');
+        $file = $nr ? 'cars/car'.$nr : 'main/index2';
+        return $this->render($file.'.html.twig');
     }
 }

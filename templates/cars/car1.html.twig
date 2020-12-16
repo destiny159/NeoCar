@@ -1,0 +1,10 @@
+{% extends 'main/index2.html.twig' %}
+
+{% block carname %}Ferrari 812 Sportfast{% endblock %}
+{% block imagesrc %}{{ asset('images/ferrari/ferrari-main.png') }}{% endblock %}
+{% block bodysvg %}{{ source('car-svgs/ferrari-body.svg') }}{% endblock %}
+
+{% block colors %}{{ parent() }}{% endblock %}
+{% block wheels %}{{ parent() }}{% endblock %}
+{% block windows %}{{ parent() }}{% endblock %}
+{% block interiors %}{{ parent() }}{% endblock %}
