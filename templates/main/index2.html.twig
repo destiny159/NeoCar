@@ -144,7 +144,7 @@
                         </div>
                         <div id="collapse3" class="collapse" data-parent="#customizationAccordion">
                             <div class="card-body mb-4">
-                                <div class="windows selection-buttons">
+                                <div class="windows selection-buttons mb-4">
                                     {% block windows %}
                                         <div class="window selection-button selected" style="background-color: #fff" data-hex="#fff"></div>
                                         <div class="window selection-button" style="background-color: #DEE2E6" data-hex="#DEE2E6"></div>
@@ -153,6 +153,9 @@
                                         <div class="window selection-button" style="background-color: #495057" data-hex="#495057"></div>
                                         <div class="window selection-button" style="background-color: #343A40" data-hex="#343A40"></div>
                                     {% endblock %}
+                                </div>
+                                <div class="pt-3">
+                                    <input type="range" min="0" max="255" value="0" class="window-range custom-range">
                                 </div>
                             </div>
                         </div>
@@ -190,6 +193,26 @@
             <a href=""><i class="fa fa-times"></i> reset all</a>
         </div>
     </div>
+
+    <div class="call-to-action">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="inner-content">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque corporis amet elite author nulla.</p>
+                  </div>
+                  <div class="col-lg-4 col-md-6 text-right">
+                    <a href="#" class="filled-button">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 {% endblock %}
 
 {% block javascripts %}
@@ -200,7 +223,9 @@
         const bodyOverlay = document.querySelector("#product-shape");
         const windowsOverlay = document.querySelector("#product-windows");
         const wheelsOverlay = document.querySelector("#product-wheels");
+
         const colorPicker = document.querySelector(".jscolor");
+        const windowRange = document.querySelector(".window-range");
 
         function changeColor(picker) {
             selectedColor?.classList.remove("selected");
@@ -276,7 +301,18 @@
             selectedWindow?.classList.remove("selected");
             target.classList.add("selected");
             selectedWindow = target;
+
+            windowRange.value = 0;
             changeWindowsColor(data);
+        })
+
+        windowRange.addEventListener('input', (e) => {
+            const target = e.target;
+            const value = 255 - target.value;
+            const color = `rgb(${value}, ${value}, ${value})`;
+
+            selectedWindow?.classList.remove("selected");
+            changeWindowsColor(color);
         })
 
         const interiors = document.querySelector(".interiors");
