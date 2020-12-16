@@ -12,12 +12,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item {{ app.request.get('_route') == 'index' ? 'active' }}">
-                <a class="nav-link" href="{{ path('index') }}">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-            </li> 
+                <a class="nav-link" href="{{ path('index') }}">Home</a>
+            </li>
 
-            <li class="nav-item {{ app.request.get('_route') == 'cardetails' ? 'active' }}"><a class="nav-link" href="{{ path('cardetails') }}">Products</a></li>
+            <li class="nav-item {{ app.request.get('_route') == 'cardetails' ? 'active' }}">
+              <a class="nav-link" href="{{ path('cardetails') }}">Products</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Checkout</a>
+            </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
@@ -25,14 +29,23 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#">About Us</a>
                   <a class="dropdown-item" href="#">Blog</a>
-                  <a class="dropdown-item" href="#">Testimonials</a>
                   <a class="dropdown-item" href="#">Terms</a>
+                  <a class="dropdown-item" href="#">Contact Us</a>
                 </div>
             </li>
+            {% if app.request.cookies.get('loggedIn') %}
+              <li class="nav-item" onclick="document.cookie='loggedIn=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;'">
+                <a class="nav-link" href="{{ path('index') }}">Logout</a>
+              </li>
+            {% else %}
+              <li class="nav-item {{ app.request.get('_route') == 'login' ? 'active' }}">
+                <a class="nav-link" href="{{ path('login') }}">Login</a>
+              </li>
 
-            <li class="nav-item"><a class="nav-link" href="#">Checkout</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+              <li class="nav-item {{ app.request.get('_route') == 'register' ? 'active' }}">
+                <a class="nav-link" href="{{ path('register') }}">Register</a>
+              </li>
+            {% endif %}
         </ul>
       </div>
     </div>

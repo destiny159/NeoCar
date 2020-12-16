@@ -24,4 +24,24 @@ class MainController extends AbstractController
         $file = $nr ? 'cars/car'.$nr : 'main/index2';
         return $this->render($file.'.html.twig');
     }
+
+    /**
+     * @Route("/login", name="login")
+     */
+    public function login(): Response
+    {
+        return $this->render('main/login.html.twig', [
+            'login' => true
+        ]);
+    }
+
+    /**
+     * @Route("/register", name="register")
+     */
+    public function register(): Response
+    {
+        return $this->render('main/login.html.twig', [
+            'login' => false
+        ]);
+    }
 }

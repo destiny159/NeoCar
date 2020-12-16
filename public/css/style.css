@@ -925,7 +925,7 @@ footer .inner-content p a {
 	border: 1px solid #eee;
 }
 
-.contact-form button.filled-button {
+button.filled-button {
 	background-color: #B02A37;
 	color: #fff;
 	font-size: 14px;
@@ -940,7 +940,7 @@ footer .inner-content p a {
 	cursor: pointer;
 }
 
-.contact-form button.filled-button:hover {
+button.filled-button:hover {
 	background-color: #121212;
 	color: #fff;
 }
