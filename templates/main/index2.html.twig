@@ -42,8 +42,8 @@
         }
 
         .selection-button {
-            height: 2.5em;
-            width: 2.5em;
+            min-height: 2.5rem;
+            min-width: 2.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -190,7 +190,43 @@
     <div class="container" style="margin-top: 80px;">
         <div class="section-heading">
             <h2>Your selected options</span></h2>
-            <a href=""><i class="fa fa-times"></i> reset all</a>
+            <a href="" onclick="window.scrollTo(0, 0);"><i class="fa fa-times"></i> reset all</a>
+        </div>
+
+        <div class="row pb-5">
+            <div class="col">
+                <div class="summary card-group">
+                    <div class="card">
+                        <div class="card-body d-flex flex-wrap justify-content-center align-items-center">
+                            <h5 class="font-weight-normal mr-3">Color</h5>
+                            <div class="color selection-button"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body d-flex flex-wrap justify-content-center align-items-center">
+                            <h5 class="font-weight-normal mr-3">Wheels</h5>
+                            <div class="wheel selection-button">1</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body d-flex flex-wrap justify-content-center align-items-center">
+                            <h5 class="font-weight-normal mr-3">Window tint</h5>
+                            <div class="window selection-button"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body d-flex flex-wrap justify-content-center align-items-center">
+                            <h5 class="font-weight-normal mr-3">Interior</h5>
+                            <div class="interior selection-button">1</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body d-flex flex-wrap justify-content-center align-items-center">
+                            <a href="#" class="">Proceed To Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -227,20 +263,24 @@
         const colorPicker = document.querySelector(".jscolor");
         const windowRange = document.querySelector(".window-range");
 
-        function changeColor(picker) {
-            selectedColor?.classList.remove("selected");
-            changeBodyColor(picker.toHEXString());
-        }
+        const summaryColor = document.querySelector(".summary .color");
+        const summaryWheel = document.querySelector(".summary .wheel");
+        const summaryWindow = document.querySelector(".summary .window");
+        const summaryInterior = document.querySelector(".summary .interior");
 
         function changeBodyColor(hexColor) {
             bodyOverlay.style.fill = hexColor;
+            summaryColor.style.backgroundColor = hexColor;
         }
 
         function changeWindowsColor(hexColor) {
             windowsOverlay.style.fill = hexColor;
+            summaryWindow.style.backgroundColor = hexColor;
         }
 
         function changeWheels(src) {
+            summaryWheel.textContent = selectedWheel.textContent;
+
             if(src == " "){
                 wheelsOverlay.classList.add("d-none");
                 return;
@@ -248,6 +288,10 @@
 
             wheelsOverlay.src = src;
             wheelsOverlay.classList.remove("d-none");
+        }
+
+        function changeInterior(src) {
+            summaryInterior.textContent = selectedInterior.textContent;
         }
 
         const colors = document.querySelector(".colors");
@@ -268,6 +312,11 @@
             colorPicker.jscolor.fromString(data);
             changeBodyColor(data);
         })
+
+        function changeColor(picker) {
+            selectedColor?.classList.remove("selected");
+            changeBodyColor(picker.toHEXString());
+        }
 
         const wheels = document.querySelector(".wheels");
         let selectedWheel = document.querySelector(".wheel.selected");
@@ -329,6 +378,7 @@
             selectedInterior?.classList.remove("selected");
             target.classList.add("selected");
             selectedInterior = target;
+            changeInterior(data);
         })
 
     </script>
