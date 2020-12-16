@@ -269,12 +269,16 @@
         const summaryInterior = document.querySelector(".summary .interior");
 
         function changeBodyColor(hexColor) {
-            bodyOverlay.style.fill = hexColor;
+            if (bodyOverlay) {
+                bodyOverlay.style.fill = hexColor;
+            }
             summaryColor.style.backgroundColor = hexColor;
         }
 
         function changeWindowsColor(hexColor) {
-            windowsOverlay.style.fill = hexColor;
+            if (windowsOverlay) {
+                windowsOverlay.style.fill = hexColor;
+            }
             summaryWindow.style.backgroundColor = hexColor;
         }
 
